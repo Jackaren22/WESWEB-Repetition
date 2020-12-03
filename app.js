@@ -1,11 +1,15 @@
 //Inkludera Express.js
 const express = require('express')
+
 //Inkludera dbModule.js
 const dbModule = require('./dBModule')
+
 //Inkludera MessageModel för att kunna spara meddelanden i databasen 
 const MessageModel = require('./MessageModel')
+
 //Gör en instans klassen express
 const app = express()
+
 //Ange porten som servern kommer att lyssna på.
 const port = 3000
 
@@ -23,13 +27,24 @@ app.set('view engine' , 'ejs')
 //Lyssnar på GET requests på addressen <domain>/
 app.get('/', (req, res) => {
     //rendera sidan index.ejs
-  res.render('/index.ejs')
+  res.render('index.ejs')
+})
+
+app.get('/skins', (req, res) => {
+  //rendera sidan index.ejs
+res.render('skins.ejs')
+})
+
+app.get('/abilities', (req, res) => {
+  //rendera sidan index.ejs
+res.render('abilities.ejs')
 })
 
 //Lyssnar på POST requests på addressen <domain>/
 app.post('/', function (req, res) {
     //Skapa ett Message objekt
     const message = MessageModel.createMessage(req.body.email, req.body.message)
+    
     //spara elementet Message i databasen
     dbModule.storeElement(message)
 

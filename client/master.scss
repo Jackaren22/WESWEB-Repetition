@@ -1,0 +1,103 @@
+// I don't have functions in a sepperate scss because it REALLY didnt want to work
+
+@mixin Center(){ // General function that centers stuff
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin flexCenter($background) { // Function that generalises each box in the header
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 33.33%;
+    height: 4vw;
+    background: $background;
+    border: 0.5vw solid rgb(18, 40, 110);
+    
+}
+
+body { // Background Color of all pages
+    background-color: rgb(18, 40, 110);
+}
+
+header { // Header for all my 3 pages
+    @include Center();
+ 
+    .boxhome{
+        @include flexCenter(rgb(21, 139, 248));
+    }
+
+    .boxskins{
+        @include flexCenter(rgb(39, 187, 236));
+    }
+
+    .boxabilities{
+        @include flexCenter(rgb(145, 255, 255));
+    }
+
+}
+.index { // CSS for everything on the Main page
+    .title {
+        @include Center();
+        background-color: blue;
+        float: left;
+        width: 100%;
+        margin-bottom: 1vw;
+    }
+    .splashart {
+        @include Center();
+        float: left;
+        width: 100%;
+    }
+    .lore {
+        float: left;
+        h3{
+            text-align: center;
+            background-color: rgb(111, 0, 255);
+        }
+        p{
+            @include Center();
+            background-color: rgb(111, 0, 255);
+            font-size: 25px;
+        }
+    }
+}
+
+.skins { // CSS for everything on the Skins page
+    .preview {
+        float: left;
+        width: 50%;
+        height: 10vwpx;
+        img{
+            width: 100%;
+        }
+        p {
+            text-align: center;
+            background-color: red;
+        }
+    }
+}
+
+.abilities{ // CSS for everything on the abilities page
+    .ability{
+        float: left;
+        width: 20%;
+        height: 6vwpx;
+        background-color: rgb(0, 255, 221);
+        video{
+            width: 100%;
+        }
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 15%;
+            margin-top: 1vw;
+    
+        }
+    
+    }
+}
