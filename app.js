@@ -25,27 +25,28 @@ app.use(express.urlencoded())
 app.set('view engine' , 'ejs')
 
 //Lyssnar på GET requests på addressen <domain>/
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     //rendera sidan index.ejs
-  res.render('index.ejs')
-})
+    const messages = await MessageModel.getAllMessages();
+  res.render('index.ejs', { messages: messages});
+});
 
 app.get('/skins', (req, res) => {
-  //rendera sidan index.ejs
+  //Rendera sidan index.ejs
 res.render('skins.ejs')
 })
 
 app.get('/abilities', (req, res) => {
-  //rendera sidan index.ejs
+  //Rendera sidan index.ejs
 res.render('abilities.ejs')
 })
 
 //Lyssnar på POST requests på addressen <domain>/
-app.post('/', function (req, res) {
+app.post('/', async (req, res) => {
     //Skapa ett Message objekt
     const message = MessageModel.createMessage(req.body.email, req.body.message)
     
-    //spara elementet Message i databasen
+    //Spara elementet Message i databasen
     dbModule.storeElement(message)
 
     //Omdirigera klienten till huvudsidan

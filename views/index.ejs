@@ -84,21 +84,23 @@
 
         <div class="form">
         
-            <form action="/" method="POST" style="color: aquamarine;">
+            <form action="/" method="post" style="color: aquamarine;">
                 <label><b>THE FORM IS DOWN HERE! :D : Please Input your Email</b></label><br>
                 <input type="email" name="email"><br>
                 <label>Now type whatever you want you monkey</label><br>
-                <input type="message" name="message">
+                <input type="text" name="message">
                 <input type="submit" value="Submit your soul!">
               </form>
         
         
         </div>
 
-        <div class="textbox">
-            gg
-
+        <% for( let i=0; i < messages.length; i++ ) { %>
+        <div>
+            <p>message.email</p>
+            <p>message.text</p>
         </div>
+        <% } %>
 
     </div>
 
