@@ -96,9 +96,12 @@
         </div>
 
         <% for( let i=0; i < messages.length; i++ ) { %>
-        <div>
-            <p>message.email</p>
-            <p>message.text</p>
+        <div class="textbox" style="background-color: rgb(146, 0, 0);">
+            <%# Jag prövade att byta variabler och använda mig utav EJS taggar på alla möjliga sett men antingen så kan den inte defineras eller så skriver den bara ut exakt
+            det som står inom diven. Är ganska säker på att det är något jag gör fel just här men det kanske är något fel i appjs eller dbModule.js %>
+            <h1>message.email</h1>
+            <h1>message.text</h1>
+             
         </div>
         <% } %>
 

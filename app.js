@@ -33,13 +33,13 @@ app.get('/', async (req, res) => {
 
 app.get('/skins', (req, res) => {
   //Rendera sidan index.ejs
-res.render('skins.ejs')
-})
+res.render('skins.ejs');
+});
 
 app.get('/abilities', (req, res) => {
   //Rendera sidan index.ejs
-res.render('abilities.ejs')
-})
+res.render('abilities.ejs');
+});
 
 //Lyssnar på POST requests på addressen <domain>/
 app.post('/', async (req, res) => {
@@ -47,11 +47,11 @@ app.post('/', async (req, res) => {
     const message = MessageModel.createMessage(req.body.email, req.body.message)
     
     //Spara elementet Message i databasen
-    await dbModule.storeElement(message)
+    await dbModule.storeElement(message);
 
     //Omdirigera klienten till huvudsidan
-    res.redirect('/')
-})
+    res.redirect('/');
+});
 
 //Sätt igång servern så att den kan ta emot requests på vald port.
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
