@@ -122,6 +122,16 @@ header .boxabilities {
   font-size: 25px;
 }
 
+.index .form {
+  width: 50%;
+}
+
+.index .textbox {
+  width: 50%;
+  float: right;
+  background-color: white;
+}
+
 .skins .preview {
   float: left;
   width: 50%;

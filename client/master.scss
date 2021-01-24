@@ -64,6 +64,14 @@ header { // Header for all my 3 pages
             font-size: 25px;
         }
     }
+    .form {
+        width: 50%;
+    }
+    .textbox {
+        width: 50%;
+        float: right;
+        background-color: white;
+    }
 }
 
 .skins { // CSS for everything on the Skins page
