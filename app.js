@@ -47,7 +47,7 @@ app.post('/', async (req, res) => {
     const message = MessageModel.createMessage(req.body.email, req.body.message)
     
     //Spara elementet Message i databasen
-    dbModule.storeElement(message)
+    await dbModule.storeElement(message)
 
     //Omdirigera klienten till huvudsidan
     res.redirect('/')
